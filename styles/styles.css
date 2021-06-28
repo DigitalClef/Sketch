@@ -12,6 +12,7 @@ body {
     grid-template-columns: repeat(1, 1fr);
     width: 80vmin;
     height: 80vmin;
+    border: solid 1px black;
 }
 
 .inner-sketch {
@@ -19,3 +20,4 @@ body {
     border: solid 1px black;
     padding: 10%;
 }
+
