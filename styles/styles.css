@@ -1,6 +1,6 @@
 body {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -10,17 +10,27 @@ body {
 .button-box {
     display: flex;
     flex-direction: column;
+    margin-right: 10px;
+    width: 200px;
+    height: 200px;
 }
 
 .button-design {
-    font-size: 20px;
+    font-size: 1em;
+    padding: 50px;
 }
 
 .inner-sketch {
-    background-color: pink;
+    background-color: white;
     border: solid 0px black;
     padding: 10%;
 } 
+
+.main {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
 
 .sketch-main {
     display: grid;
@@ -31,5 +41,9 @@ body {
     gap: 0;
 }
 
+#top-title {
+    font-size: 7vmin;
+    margin: 0px;
+}
 
 
