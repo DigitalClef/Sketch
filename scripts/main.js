@@ -1,3 +1,4 @@
+//initialize variables
 const sizeButton = document.querySelector('#size-button');
 const rainbowButton = document.querySelector('#rainbow-button');
 const sketchMain = document.querySelector('.sketch-main');
@@ -6,15 +7,18 @@ const originalButton = document.querySelector('#original-button');
 const eraseButton = document.querySelector('#erase-button');
 let color = 'black';
 
+//creates grid when page is first loaded
 function defaultGrid() {
     makeGrid(16);
     setGrid(16);
 }
 
+//uses grid display to create appropriate amount of rows and columns based on user input
 function makeGrid(size) {
     sketchMain.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
 }
 
+//sets the color to assign to background color of created grid divs
 function draw() {
     if (color === 'black') {
         this.style.backgroundColor = 'black';
@@ -35,11 +39,13 @@ function setGrid(size) {
         innerSketch.classList.add('inner-sketch');
         sketchMain.appendChild(innerSketch); 
     };
+    //loops through sketchMain nodeList to enable mouseover event
     sketchMain.querySelectorAll('.inner-sketch').forEach(function(item) {
         item.onmouseover = draw;
     });
 }
 
+//clears grid
 clearButton.addEventListener('click', function() {;
     let currentSize = sketchMain.childElementCount ** (1/2);
     emptyGrid();
@@ -68,30 +74,17 @@ sizeButton.onclick = function() {
     setGrid(userValue);
 }
 
+//orginal button is clicked
 originalButton.onclick = function() {
     color = 'black';
 }
 
+//erase button is clicked
 eraseButton.onclick = function() {
     color = 'white';
 }
 
+//pride button is clicked
 rainbowButton.onclick = function() {
     color = 'rainbow';
 }
-
-
-
-
-//innerSketch.onmouseover = function(e) {
-    //     e.target.style.backgroundColor = 'black';
-    // };
-    // rainbowButton.addEventListener('click', function() {
-    //     drawRainbow(innerSketch);
-    // })
-    // originalButton.addEventListener('click', function() {
-    //     draw(innerSketch, '000');
-    // });
-    // eraseButton.addEventListener('click', function() {
-    //     draw(innerSketch, 'FFF');
-    // });
